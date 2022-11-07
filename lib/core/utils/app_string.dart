@@ -6,4 +6,6 @@ class AppString {
   static String arrowUp = "assets/images/Vector01.png";
   static String selectCamera = "assets/images/select_camera.png";
   static String selectGallery = "assets/images/gallery.png";
+  static String loginBackgroundImage = "assets/images/login_backgground.png";
+  static String loginCamera = "assets/images/camera.png";
 }

@@ -13,6 +13,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../core/services/cache_helper.dart';
 import '../../core/services/services_locator.dart';
 import '../../core/style/app_color.dart';
+import '../../core/utils/screen_config.dart';
 import '../controller/Login/login_bloc.dart';
 import '../controller/galleryBloc/gallery_event.dart';
 import '../controller/galleryBloc/gallery_state.dart';
@@ -23,15 +24,14 @@ class GalleryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
+    SizeConfig.init(context);
     return Scaffold(
       body: SafeArea(
         child: Stack(
           children: [
             Container(
-              width: width,
-              height: height,
+              width: SizeConfig.screenWidth,
+              height: SizeConfig.screenHeight,
               color: Colors.green,
               child: const Image(
                 fit: BoxFit.cover,
@@ -88,8 +88,8 @@ class GalleryScreen extends StatelessWidget {
                             builder: (BuildContext context) => AlertDialog(
                               backgroundColor: Colors.white.withOpacity(0.3),
                               content: Container(
-                                height: height * 0.2,
-                                width: width * 0.2,
+                                height: SizeConfig.screenHeight * 0.2,
+                                width: SizeConfig.screenWidth * 0.2,
                                 child: Column(
                                   children: [
                                     const SizedBox(height: 10.0),
