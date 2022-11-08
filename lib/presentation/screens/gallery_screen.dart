@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gellary_app/core/routers/app_routers.dart';
-import 'package:gellary_app/core/utils/app_size.dart';
-import 'package:gellary_app/core/utils/app_string.dart';
-import 'package:gellary_app/core/utils/enum.dart';
-import 'package:gellary_app/presentation/controller/galleryBloc/gallery_bloc.dart';
-import 'package:gellary_app/presentation/widgets/build_gradiView.dart';
-import 'package:gellary_app/presentation/widgets/select_image.dart';
+import '../../core/routers/app_routers.dart';
+import '../../core/utils/app_size.dart';
+import '../../core/utils/app_string.dart';
+import '../../core/utils/enum.dart';
+import '../controller/galleryBloc/gallery_bloc.dart';
+import '../widgets/gallery/build_gradiView.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:image_picker/image_picker.dart';
-
 import '../../core/services/cache_helper.dart';
-import '../../core/services/services_locator.dart';
 import '../../core/style/app_color.dart';
 import '../../core/utils/screen_config.dart';
 import '../controller/Login/login_bloc.dart';
-import '../controller/galleryBloc/gallery_event.dart';
 import '../controller/galleryBloc/gallery_state.dart';
-import '../widgets/general_button.dart';
+import '../widgets/gallery/show_alert_dialog.dart';
+import '../widgets/gallery/general_button.dart';
 
 class GalleryScreen extends StatelessWidget {
   const GalleryScreen({super.key});
@@ -79,70 +75,19 @@ class GalleryScreen extends StatelessWidget {
                         image: AppString.arrowLeft,
                       ),
                       AppSize.sh_20,
-                      GeneralButtonComponent(
-                        text: 'upload',
-                        color: AppColor.gray03,
-                        onPressed: () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) => AlertDialog(
-                              backgroundColor: Colors.white.withOpacity(0.3),
-                              content: Container(
-                                height: SizeConfig.screenHeight * 0.2,
-                                width: SizeConfig.screenWidth * 0.2,
-                                child: Column(
-                                  children: [
-                                    const SizedBox(height: 10.0),
-                                    SelectImage(
-                                        image: AppString.selectGallery,
-                                        title: 'Gallery',
-                                        onTap: () {
-                                          BlocProvider.of<GalleryBloc>(context)
-                                              .add(UploadImageEvent(
-                                                  imageSource:
-                                                      ImageSource.gallery));
-                                          Navigator.pop(context);
-                                        }),
-                                    const SizedBox(height: 10.0),
-                                    SelectImage(
-                                        image: AppString.selectCamera,
-                                        title: 'Camera',
-                                        onTap: () {
-                                          BlocProvider.of<GalleryBloc>(context)
-                                              .add(UploadImageEvent(
-                                                  imageSource:
-                                                      ImageSource.camera));
-                                          Navigator.pop(context);
-                                        }),
-                                  ],
-                                ),
-                              ),
-                              actions: [
-                                TextButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  child: Text('Cancle'),
-                                ),
-                              ],
-                            ),
-                          );
-                        },
-                        image: AppString.arrowUp,
-                      ),
+                      const GalleryUploadImage(),
                     ],
                   ),
                   AppSize.sv_20,
                   BlocConsumer<GalleryBloc, GalleryState>(
                     listener: (context, state) {},
                     builder: (context, state) {
-                      if (state.images.isEmpty ||
-                          state.images == null ||
-                          state.images.length == 0) {
+                      if (state.galleryState == RequestState.loading) {
                         return const Center(
                           child: CircularProgressIndicator(),
                         );
-                      } else if (state.images.isNotEmpty) {
+                      } else if (state.galleryState == RequestState.loaded ||
+                          state.images.isNotEmpty) {
                         return Expanded(
                           child: BuildGradViewComponent(
                             galleryData: state.images,
@@ -166,6 +111,25 @@ class GalleryScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class GalleryUploadImage extends StatelessWidget {
+  const GalleryUploadImage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GeneralButtonComponent(
+      text: 'upload',
+      color: AppColor.gray03,
+      image: AppString.arrowUp,
+      onPressed: () {
+        showDialog(
+            context: context,
+            barrierColor: Colors.transparent,
+            builder: (BuildContext context) => const ShowAlertDialog());
+      },
     );
   }
 }

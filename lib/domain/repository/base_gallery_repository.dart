@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:gellary_app/core/error/failure.dart';
-import 'package:gellary_app/domain/entity/gallery_data.dart';
+import '../../core/error/failure.dart';
+import '../entity/gallery_data.dart';
 
 import '../entity/login_response.dart';
 

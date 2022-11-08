@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:gellary_app/core/style/app_color.dart';
+import '../../../core/style/app_color.dart';
 
 class TextFormComponent extends StatelessWidget {
   final String hintText;

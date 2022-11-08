@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gellary_app/core/services/cache_helper.dart';
-import 'package:gellary_app/presentation/controller/Login/login_bloc.dart';
-import 'package:gellary_app/presentation/controller/galleryBloc/gallery_bloc.dart';
-import 'package:gellary_app/presentation/controller/galleryBloc/gallery_event.dart';
+import 'core/services/cache_helper.dart';
+import 'presentation/controller/Login/login_bloc.dart';
+import 'presentation/controller/galleryBloc/gallery_bloc.dart';
+import 'presentation/controller/galleryBloc/gallery_event.dart';
 
 import 'core/routers/app_routers.dart';
 import 'core/services/services_locator.dart';

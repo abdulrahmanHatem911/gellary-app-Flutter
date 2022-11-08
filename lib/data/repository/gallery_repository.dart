@@ -1,9 +1,9 @@
-import 'package:gellary_app/core/error/exeption.dart';
-import 'package:gellary_app/domain/entity/gallery_data.dart';
-import 'package:gellary_app/domain/entity/login_response.dart';
-import 'package:gellary_app/core/error/failure.dart';
+import '../../core/error/exeption.dart';
+import '../../domain/entity/gallery_data.dart';
+import '../../domain/entity/login_response.dart';
+import '../../core/error/failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:gellary_app/domain/repository/base_gallery_repository.dart';
+import '../../domain/repository/base_gallery_repository.dart';
 
 import '../data source/remote/remote_data_source.dart';
 

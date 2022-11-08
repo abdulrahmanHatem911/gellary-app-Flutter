@@ -1,10 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:gellary_app/core/utils/app_string.dart';
-
-import '../../domain/entity/gallery_data.dart';
+import '../../../core/utils/app_string.dart';
 
 class BuildGradViewComponent extends StatelessWidget {
   final List galleryData;

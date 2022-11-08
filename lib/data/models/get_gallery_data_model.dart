@@ -1,4 +1,4 @@
-import 'package:gellary_app/domain/entity/gallery_data.dart';
+import '../../domain/entity/gallery_data.dart';
 
 class GetGalleryDataModel extends GalleryData {
   const GetGalleryDataModel({

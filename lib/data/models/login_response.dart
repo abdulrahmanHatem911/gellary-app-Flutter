@@ -1,4 +1,4 @@
-import 'package:gellary_app/domain/entity/login_response.dart';
+import '../../domain/entity/login_response.dart';
 
 class LoginResponseModel extends LoginResponse {
   const LoginResponseModel({

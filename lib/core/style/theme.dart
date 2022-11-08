@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gellary_app/core/style/app_color.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'app_color.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
@@ -19,10 +20,11 @@ class AppTheme {
 
   static getTextTheme() {
     return TextTheme(
-      headline1: TextStyle(
-        color: AppColor.white,
-        fontSize: 14.0,
+      headline1: GoogleFonts.balooThambi2(
+        fontSize: 30,
+        height: 0.9,
         fontWeight: FontWeight.w500,
+        color: AppColor.gray02,
       ),
       headline2: TextStyle(fontSize: 13.0, fontWeight: FontWeight.w600),
       headline3: TextStyle(

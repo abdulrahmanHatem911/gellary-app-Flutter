@@ -1,7 +1,7 @@
-import 'package:gellary_app/data/data%20source/remote/remote_data_source.dart';
-import 'package:gellary_app/data/repository/gallery_repository.dart';
-import 'package:gellary_app/domain/repository/base_gallery_repository.dart';
-import 'package:gellary_app/domain/use%20case/login_resopnse_ues_case.dart';
+import '../../data/data%20source/remote/remote_data_source.dart';
+import '../../data/repository/gallery_repository.dart';
+import '../../domain/repository/base_gallery_repository.dart';
+import '../../domain/use%20case/login_resopnse_ues_case.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../domain/use case/get_gallery_use_case.dart';

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gellary_app/core/routers/app_routers.dart';
-import 'package:gellary_app/core/services/services_locator.dart';
-import 'package:gellary_app/core/style/app_color.dart';
-import 'package:gellary_app/core/utils/app_string.dart';
-import 'package:gellary_app/presentation/controller/Login/login_bloc.dart';
+import '../../core/routers/app_routers.dart';
+import '../../core/services/services_locator.dart';
+import '../../core/style/app_color.dart';
+import '../../core/utils/app_string.dart';
+import '../controller/Login/login_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../core/services/cache_helper.dart';

@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:gellary_app/domain/use%20case/get_gallery_use_case.dart';
-import 'package:gellary_app/presentation/controller/galleryBloc/gallery_state.dart';
+import '../../../domain/use%20case/get_gallery_use_case.dart';
+import 'gallery_state.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../../core/utils/enum.dart';
 import 'gallery_event.dart';

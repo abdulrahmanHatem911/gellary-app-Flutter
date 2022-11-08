@@ -1,4 +1,4 @@
-import 'package:gellary_app/core/services/cache_helper.dart';
+import '../services/cache_helper.dart';
 
 class ApiConstant {
   static const String BASE_URL = "https://technichal.prominaagency.com/api/";

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:gellary_app/core/utils/enum.dart';
-import 'package:gellary_app/domain/entity/gallery_data.dart';
+import '../../../core/utils/enum.dart';
+import '../../../domain/entity/gallery_data.dart';
 
 class GalleryState extends Equatable {
   final List images;
